@@ -519,4 +519,17 @@ def test_data_survives_repository_restart(
     )
 
     second_repository.close()
-    
+
+def test_repository_context_manager():
+    with HabitRepository(
+        ":memory:"
+    ) as repository:
+
+        habit = repository.create_habit(
+            Habit(
+                name="Context Manager Habit",
+                periodicity=Periodicity.DAILY,
+            )
+        )
+
+        assert habit.id is not None    

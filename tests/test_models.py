@@ -148,4 +148,81 @@ def test_habit_string_representation():
     )
 
     assert str(habit) == "Read 30 Minutes (Daily)"
-    
+
+def test_habit_name_must_be_string():
+    with pytest.raises(TypeError):
+        Habit(
+            name=123,
+            periodicity=Periodicity.DAILY,
+        )
+
+
+def test_habit_description_must_be_string():
+    with pytest.raises(TypeError):
+        Habit(
+            name="Reading",
+            periodicity=Periodicity.DAILY,
+            description=123,
+        )
+
+
+def test_habit_id_must_be_integer_when_present():
+    with pytest.raises(TypeError):
+        Habit(
+            id="1",
+            name="Reading",
+            periodicity=Periodicity.DAILY,
+        )
+
+
+def test_habit_creation_time_must_be_datetime():
+    with pytest.raises(TypeError):
+        Habit(
+            name="Reading",
+            periodicity=Periodicity.DAILY,
+            created_at="2026-08-03",
+        )
+
+
+def test_completion_id_must_be_integer_when_present():
+    with pytest.raises(TypeError):
+        Completion(
+            id="1",
+            habit_id=1,
+        )
+
+
+def test_completion_id_must_be_positive():
+    with pytest.raises(ValueError):
+        Completion(
+            id=0,
+            habit_id=1,
+        )
+
+
+def test_completion_time_must_be_datetime():
+    with pytest.raises(TypeError):
+        Completion(
+            habit_id=1,
+            completed_at="2026-08-03",
+        )
+
+
+def test_completion_string_representation():
+    completion = Completion(
+        id=1,
+        habit_id=3,
+        completed_at=datetime(
+            2026,
+            8,
+            3,
+            12,
+            30,
+        ),
+    )
+
+    result = str(completion)
+
+    assert "Habit 3" in result
+    assert "2026-08-03 12:30:00" in result    
+

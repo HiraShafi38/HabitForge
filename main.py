@@ -678,11 +678,15 @@ def analytics_performance_report(
 
         habit = item["habit"]
 
+        rate_text = (
+            f"{item['consistency_rate']:.1f}%"
+        )
+
         print(
             f"{habit.name[:20]:<22}"
             f"{item['successful_periods']:<8}"
             f"{item['missed_periods']:<9}"
-            f"{item['consistency_rate']:<8.1f}%"
+            f"{rate_text:<9}"
             f"{item['longest_streak']:<9}"
             f"{item['current_streak']:<9}"
         )
