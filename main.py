@@ -251,7 +251,7 @@ def view_habits(
 
     display_habit_list(
         habits,
-        show_description=True,
+        show_description=False,
     )
 
 
@@ -301,7 +301,9 @@ def create_habit(
         f"ID: {habit.id}\n"
         f"Name: {habit.name}\n"
         f"Periodicity: "
-        f"{periodicity_label(habit.periodicity)}"
+        f"{periodicity_label(habit.periodicity)}\n"
+        f"Description: "
+        f"{habit.description if habit.description else 'None'}"     
     )
 
 
@@ -322,6 +324,8 @@ def complete_habit(
 
     completion = repository.record_completion(
         habit.id
+
+    
     )
 
     print(
