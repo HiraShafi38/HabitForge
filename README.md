@@ -625,7 +625,6 @@ The application displays:
 - name
 - periodicity
 - creation date
-- description
 
 ---
 
@@ -646,6 +645,9 @@ Optional description
 ```
 
 The application automatically records the creation timestamp.
+
+After creation, HabitForge confirms the habit ID, name,
+periodicity and stored description.
 
 ---
 
@@ -742,7 +744,7 @@ python -m pytest -v
 The current project test suite contains:
 
 ```text
-91 automated tests
+137 automated tests
 ```
 
 covering areas including:
@@ -782,6 +784,8 @@ covering areas including:
 ---
 
 # Test Coverage
+
+The current test suite achieves **97% overall code coverage**.
 
 Run test coverage using:
 

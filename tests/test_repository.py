@@ -448,7 +448,7 @@ def test_data_survives_repository_restart(
     tmp_path,
 ):
     """
-    Prove that habits and completions persist between database sessions.
+    Verify that habits and completions persist between database sessions.
     """
 
     database_path = (

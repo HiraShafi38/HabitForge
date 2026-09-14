@@ -1,8 +1,8 @@
 """
 Predefined deterministic fixture data for HabitForge.
 
-The project requires five predefined habits with four weeks of example
-tracking data. The fixture deliberately contains different behavioural
+Provides deterministic tracking data for five predefined habits
+across a four-week period. The fixture deliberately contains different behavioural
 patterns so analytics can be tested against known results.
 """
 

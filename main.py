@@ -324,8 +324,6 @@ def complete_habit(
 
     completion = repository.record_completion(
         habit.id
-
-    
     )
 
     print(

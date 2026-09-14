@@ -3,7 +3,7 @@ Functional analytics for HabitForge.
 
 This module contains analytical functions for habit and completion data.
 
-The analytics layer deliberately remains independent of SQLite. It
+The analytics layer remains independent of SQLite. It
 receives Habit and Completion objects from the repository and performs
 data transformations without modifying persistent application state.
 
@@ -87,8 +87,7 @@ def get_habits_by_periodicity(
     """
     Return only habits matching the selected periodicity.
 
-    Functional filtering is deliberately used as part of the
-    analytical implementation.
+    Uses filter() to select habits matching the requested periodicity.
     """
 
     _validate_periodicity(
@@ -471,8 +470,7 @@ def calculate_current_streak(
         """
         Recursively count consecutive periods backwards.
 
-        The function is deliberately pure: it reads the completed-period
-        set but does not modify it.
+        The function reads the completed-period set without modifying it.
         """
 
         if period not in periods:
