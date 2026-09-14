@@ -2,7 +2,7 @@
 Predefined deterministic fixture data for HabitForge.
 
 Provides deterministic tracking data for five predefined habits
-across a four-week period. The fixture deliberately contains different behavioural
+across a four-week period. The fixture contains different behavioural
 patterns so analytics can be tested against known results.
 """
 
@@ -82,7 +82,7 @@ def build_fixture_definition() -> List[Dict]:
     """
     Return definitions for the five predefined HabitForge habits.
 
-    Each habit has a deliberately different completion pattern so
+    Each habit uses a different completion pattern so
     streak, consistency, and struggle analytics have predictable
     expected results.
     """
